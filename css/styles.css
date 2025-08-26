@@ -1,0 +1,631 @@
+/* ============
+Generalidad
+============== */
+
+/* == Anotación: Los menús desplegables se hallan al final del CSS == */
+
+* {
+  box-sizing: border-box;
+}
+
+/*Se usa para establecer */
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+/*Se usa para verticalizar contenidos */
+.contenedor {
+  margin-top: 2dvh;
+  margin-bottom: 2dvh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/*Adecuacion del tamaño Main*/
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+body {
+  background-color: #f7f9f9; /* Fondo de la generalidad */
+  font-family: "Inter", sans-serif; /* Fuentes de la generalidad */
+  height: 100%;
+}
+
+a {
+  text-decoration: none; /* Links sin decorado */
+}
+
+/* ============
+ Del encabezado
+============== */
+
+/*NUEVO HEADER*/
+header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.currentPage {
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: 5px solid #c71585;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header-right {
+  float: right;
+}
+
+.logoHeader {
+  width: 4rem;
+  height: 4rem;
+  float: left;
+  margin: 0 0.3rem;
+}
+
+.header-left {
+  float: lef;
+}
+
+/*FIN NUEVO HEADER*/
+
+.topNavBar {
+  /* Contenedor interno del header */
+  background-color: #c71585;
+  display: flex;
+  justify-content: space-between; /* Espaciado uniforme de ítems*/
+  align-items: center;
+  width: 100%;
+  min-height: 10vh;
+  text-shadow: 1px 1px 2px gray;
+}
+
+/* Organización de íconos y links dentro de la barra superior de navegación */
+.topNavBar span,
+a {
+  color: white;
+  font-size: 1.7vw;
+  gap: 0.5rem;
+  /*padding-left: 1rem;
+  padding-right: 1rem;*/
+  align-items: center;
+  font-weight: bold;
+}
+
+/*Alineamiento del comeback*/
+.alineacion__icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#backSymbol {
+  padding: 0;
+  font-size: 2vw;
+  padding-left: 1rem;
+}
+
+#backMessaage {
+  padding: 0;
+}
+
+/*Aumento del tamaño ícono administrador*/
+#profileSession {
+  padding: 0;
+  font-size: 2vw;
+}
+
+/* Modificación de íconos de la barra superior de navegación (no del botón de navegación) */
+.topNavBar .material-symbols-outlined {
+  font-size: 1.5rem;
+}
+
+/* Se añade interactividad a los links */
+.topNavBar a:hover span {
+  color: #9acd32;
+  transition: 0.1s;
+}
+
+/* Referencia al botón de menú en la parte superior izquierda de la barra superior de navegación */
+.topSideBar,
+.profileAdmin {
+  background-color: transparent;
+  border: none; /* Se quita apariencia de botón */
+  display: flex; /* Se hace flex para que conviva bien el span con las barras */
+  flex-direction: row;
+  align-items: center;
+  gap: 10px; /* Para que se separen el bars del span */
+  padding-top: 7px;
+  padding-bottom: 7px;
+  cursor: pointer;
+}
+
+/* Se crean las barras del menú de navegación de funcionalidades */
+.bar {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 6px;
+  transition: 0.4s;
+}
+
+/* Se añade interactividad a las barras */
+.topSideBar:hover .bar {
+  background-color: #000000;
+  transition: 0.4s;
+}
+
+/* Se añade interactividad a las barras */
+.topSideBar:hover span {
+  color: #000000;
+  transition: 0.4s;
+}
+
+/* Transformaciones del ícono de menú de navegación de funcionalidades */
+.toggleSideBarClass .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+.toggleSideBarClass .bar2 {
+  opacity: 0;
+}
+.toggleSideBarClass .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+/* ============
+ Del main
+============== */
+
+/*Estilos prticulares de títulos*/
+.encabezado_estatico h1 {
+  /* Título m´s */
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  font-family: inter;
+}
+
+.encabezado_dinamico {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0%;
+  width: 100%;
+  margin: 1 rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #20b2aa;
+  border-image: radial-gradient(circle, white 0%, #20b2aa 100%) 1;
+  /*border: 1px solid black;
+  width: 40%;
+  border-radius: 50px;*/
+}
+
+.encabezado_dinamico h1 {
+  margin: 1rem 0;
+  margin-top: 3rem;
+
+  font-size: 70px;
+  text-shadow: 1px 1px 2px #20b2aa;
+}
+
+.encabezado_dinamico p {
+  color: white;
+  font-size: 70px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 30px;
+  margin-bottom: 3rem;
+  font-family: caveat;
+}
+/* Personalización de link según maquetación (Convertir en componente) */
+
+/*.ajuste{
+  display: flex;
+  justify-content: space-between;
+}*/
+.regularLink {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  background-color: #20b2aa;
+  border-color: #48d1cc;
+  border-radius: 10rem;
+  margin: 0.5rem;
+  color: #f7f9f9;
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  font-size: 1.5em;
+  text-shadow: 1px 1px 1px gray;
+}
+
+.regularLink:hover {
+  background-color: #c71585;
+  border-color: #c71585;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
+
+/* Caja que enmarca la caja secundaria que contiene las tarjetas */
+.caja_principal {
+  margin-left: 1%;
+  margin-right: 1%;
+  background-color: #dcdcdc;
+  width: 98%;
+  height: 38rem;
+  border-color: #404040;
+}
+
+/* Caja secundaria que contiene las tarjetas */
+.caja_secundaria {
+  background-color: white;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+
+  /* Comportamiento de lo contenido */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /* Se limita el alto para que se pueda desarrollar el scroll */
+  height: 23.6rem;
+  overflow-y: scroll;
+  gap: 1rem; /* espacio entre las tarjetas */
+  padding: 1rem; /* para que no se peguen los bordes */
+
+  /* Se modifican las letras */
+  font-size: 0.8rem;
+  font-family: inter;
+  font-weight: light;
+  color: #000;
+}
+
+/* Modificamos el scrollbar */
+.caja_secundaria::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: #cacaca;
+}
+
+/* Modificamos la barra del scrollbar */
+.caja_secundaria::-webkit-scrollbar-thumb {
+  background-color: #20b2aa;
+}
+
+/* Contenedor de citas */
+.contenido_cita {
+  box-sizing: border-box; /* Importnte praa que no se redimensione*/
+  width: 30rem;
+  padding: 1rem; /* opcional */
+  background-color: #f0f0f0; /* solo para visualizar */
+  border-radius: 1rem;
+  box-shadow: 1px 1px 4px #696969;
+}
+
+/* Íconos que deben fijarse de manera relativa a la tarjeta */
+.icono_cita {
+  position: relative;
+  top: -16.5rem;
+  left: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Personalización de los íconos */
+.icono_cita .material-symbols-outlined {
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+/* Elementos bajo las tarjetas */
+.parallel {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botones de paginación centrales */
+.pageNumbers a {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 rem;
+  color: #20b2aa;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  /*box-shadow: 0 2px 4px rgba(0,0,0,0.1);*/
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pageNumbers button:hover {
+  background-color: #c71585;
+  color: white;
+}
+
+.pageNumbers .active {
+  color: #9acd32;
+}
+
+/* ============
+ Footers
+============== */
+
+/* Contenedor del footer */
+.site-footer {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #c71585;
+  border-top: 8px solid #9acd32;
+}
+
+/* Textos del footer */
+.Copiright {
+  padding: 1vh 1vw;
+  font-size: 15px;
+  color: white;
+  line-height: 1px;
+}
+
+.footer__portada {
+  padding: 1vh 1vw;
+  font-size: 0.9rem;
+  color: white;
+  line-height: 0.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* ============
+ Del menú desplegable de navegación global
+============== */
+
+/*Menú de navegación de funcionalidades */
+.menu_desplegable {
+  background-color: white;
+  z-index: 9999; /* Para que flote encima */
+  overflow-y: auto;
+
+  position: fixed;
+  top: 10%;
+  left: 0;
+
+  width: 100%;
+  height: 76vh;
+
+  transform: translateX(+100%); /* Para que se guarde la derecha */
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu_desplegable.toggleSideOk {
+  transform: translateX(0); /* Entra desde la derechaa */
+}
+
+/* Organización interna del desplegado */
+.ventana_menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  margin: 0 2rem;
+  border: 1px solid #20b2aa;
+  border-radius: 30px;
+  background-color: #20b2aa;
+  padding-bottom: 3rem;
+
+  /* Organización interna */
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Contenedor de cada tarjeta individual del desplegable de navegación global */
+.box_menu {
+  width: 16rem;
+  height: 270px;
+
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.box_menu:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Título h2 dentro de cada tarjeta individual del desplegable de navegación global */
+.box_menu h2 {
+  font-size: 1.5rem;
+  color: #20b2aa;
+  margin: 0.5rem 0 0.25rem 0;
+}
+
+/* Imágen dentro de cada tarjeta individual del desplegable de navegación global */
+.imagen_menu {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Textos dentro de cada tarjeta individual del desplegable de navegación global */
+.box_menu p {
+  color: #696969;
+  font-weight: bold;
+  font-size: 1rem; /* 18px aprox */
+  padding: 0.5rem;
+}
+
+.boxContainer {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  border-radius: 30px;
+  background-color: #20b2aa;
+  border-bottom: 1px solid white;
+  border-image: radial-gradient(circle, white 0%, #20b2aa 100%) 1;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 4.5rem;
+}
+
+/* ============
+ Del menú desplegable de administrador
+============== */
+
+/*Menú de navegación de funcionalidades */
+.menu_administrador {
+  background-color: white;
+  z-index: 9999; /* Para que flote encima */
+  overflow-y: auto;
+
+  position: fixed;
+  top: 10%;
+  left: 0;
+
+  width: 100%;
+  height: 76vh;
+
+  transform: translateX(-100%); /* Para que se guarde la derecha */
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu_administrador.toggleSideAdmin {
+  transform: translateX(0);
+}
+
+.form_admin {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.form_admin label {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.form_admin input,
+.form_admin select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.boton_guardar {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.boton_guardar:hover {
+  background-color: #2980b9;
+}
+
+.cerrar_sesion {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.boton_logout {
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ============
+ Ventana inicio sesión
+============== */
+
+.contenido_regular {
+  border: 1px solid rgba(247, 249, 249, 0.2);
+  border-radius: 3%;
+  background-color: rgba(247, 249, 249, 0.3);
+  text-align: center;
+}
+
+.text__portada {
+  color: #f7f9f9;
+  font-family: inter;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/*RESPONSIVIDAD*/
+@media (max-width: 480px) {
+  .regularInstructions {
+    width: 15rem;
+    height: auto;
+  }
+
+  .footer__portada {
+    font-size: 0.7rem;
+  }
+
+  .logoShowing {
+    margin-top: 1rem;
+  }
+}

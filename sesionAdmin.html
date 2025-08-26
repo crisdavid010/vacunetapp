@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Información del proyecto -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Inicio de sesión administrador VACUNET APP"
+    />
+    <title>Inicio de sesión VACUNET</title>
+    <meta
+      name="keywords"
+      content="Ingreso de credenciales de administrador de VACUNET SAS"
+    />
+    <meta name="author" content="CYBERSENATOR-SENA-ADSO-2897548" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Termina información del proyecto -->
+
+    <!-- Termina información del proyecto -->
+    <link rel="stylesheet" href="css/normalize.css" />
+
+    <!-- Conexión con estilos generales de proyecto -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Conexión de Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- Estilos únicos de la vista (Si es que aplica) -->
+    <link rel="stylesheet" href="css/contentDependent/index.css" />
+
+    <!-- Estilos dependientes de características (Si es que aplica) -->
+
+    <!-- Consumo de fuentes a través de conexiones externas (Dependen de internet) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lógica única de la vista (Si es que aplica), se pone defer para que cargue tras el DOM -->
+    <script src="js/scriptHeroImage.js" defer></script>
+
+    <!-- Esto fue lo propuesto para poner background sin cambio (estático)
+    <script src="../js/cambioStylesUsuario.js" defer></script>
+    -->
+
+    <!-- Conexión de iconos de FontAwesome -->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <!-- El id del body permite que se sepa que es uno delos html que tienen background-->
+  <body id="background__portada">
+    <!-- Es el contenedor donde se inyectará el background cambiante -->
+    <div class="heroImage"></div>
+
+    <!-- Se usa para verticalizar los siguientes contenidos -->
+    <div class="contenedor">
+      <!-- Comienza main donde aparece todo el contendio principal -->
+      <main>
+        <!-- Crea la cajita grisacea que diferencia el contenido -->
+        <div class="contenido_regular">
+          <!-- link de regreso -->
+          <p>
+            <a href="Index.html">
+              <i class="fa-solid fa-arrow-left"></i> Regresar
+            </a>
+          </p>
+
+          <!-- Inserta imagen -->
+          <img
+            src="assets/img/resources/logo.png"
+            alt="Imagen de administrador"
+            class="logoShowing"
+          />
+
+          <p class="text__portada">Hola, administrador</p>
+
+          <!-- Conectar formulario a usuario de base de datos -->
+          <div class="regularInstructions">
+            <!-- Conectar el ID y contraseña ingresados por el usuario a la base de datos -->
+            <!--<form action="/inicio/validar.html" method="POST" class="loginForm">> --> <!--se remplazo el Metodo POSTy se le puso un ID para manejarlo con JS -->
+              <!--<label for="adminName">Nombre de administrador</label>-->
+              <form id="loginForm" class="loginForm">
+
+                <input
+                  type="number"
+                  id="adminName"
+                  name="adminName"
+                  placeholder="Número de cédula"
+                  required
+                />
+
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Contraseña"
+                  required
+                />
+
+                <p class="text__portada incorrecta" style="display: none;">contraseña incorrecta</p>
+
+                <button
+                  type="submit"
+                  class="regularLink"
+                >
+                  Iniciar sesión
+                </button>
+
+            </form>
+
+            <a
+              href="/inicio/passwordRec.html"
+              class="underline-link"
+              >Olvidé mi contraseña
+            </a>
+          </div>
+        </div>
+        <!-- Se cierra contenido principal de vista -->
+      </main>
+      <!-- Se cierra contenido principal -->
+
+      <!-- Fotter especial de la vista -->
+      <footer class="footer__portada">
+        <p>Software de uso exclusivo para la empresa VACUNET SAS</p>
+        <p>&copy;2025 CYBERSENATOR</p>
+        <p>
+          <a
+            href="/inicio/politicaPrivacidad.html"
+            class="privacy-link"
+          >
+            Conozca la política de Privacidad
+          </a>
+        </p>
+      </footer>
+      <!-- Se cierra Fotter especial de la vista -->
+    </div>
+    <script src="js/login.js" defer></script> <!-- se enviará el formulario con fetch a la API de login se utiliza feder para que cargue tras el DOM -->
+    <!-- Se cierra verticalización de los contenidos -->
+  </body>
+</html>

@@ -1,0 +1,154 @@
+.buttonBlock {
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+  height: auto;
+  padding-top: 3rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
+  /*border: 1px solid red;*/
+}
+
+.fadingButton {
+  background-color: #ddd;
+  border: none;
+  color: #696969;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 4px 2px;
+  transition: 0.3s;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.fadingButton:hover {
+  color: white;
+}
+
+.fadingButton.active {
+  background-color: #20b2aa;
+  color: white;
+}
+
+.colorButton {
+  background-color: #20b2aa;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 4px 2px;
+  transition: 0.3s;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.colorButton:active {
+  color: #696969;
+  background-color: #ddd;
+}
+
+.infoBlock {
+  padding: 1rem;
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #20b2aa;
+}
+
+#patientForm .itemForm {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 250px;
+  margin-bottom: 10px;
+}
+
+#patientForm {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  margin: 1.5rem;
+}
+
+#patientForm label {
+  display: block;
+  color: #696969;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#patientForm input,
+select {
+  background-color: #f1f1f1;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+}
+
+#patientForm input:focus,
+select:focus {
+  border: 1px solid #20b2aa;
+  outline: none;
+}
+
+.blockTittle {
+  width: 80%;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #20b2aa;
+  padding: 0.1rem;
+  background-color: #20b2aa;
+  border-radius: 5px 5px 0 0;
+}
+
+.sectionTittle {
+  width: 100%;
+  border: 1px solid #ddd;
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: 0.1rem;
+}
+
+.sectionTittle p {
+  margin-left: 1rem;
+  color: #696969;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.blockTittle p {
+  margin-left: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.sectionButton {
+  width: 80%;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #20b2aa;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0 0 5px 5px;
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pacientes</title>
+    <meta name="author" content="CYBERSENATOR-SENA-ADSO-2897548" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/contentPatient/patient.css" />
+    <!-- Estilos únicos de la vista  -->
+    <link rel="stylesheet" href="css/contentDependent/index.css" />
+    <!-- Conexión con estilos generales de proyecto -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Conexión de Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--ENCABEZADO-->
+    <header>
+      <div class="header">
+        <div class="header-left">
+          <img
+            class="logoHeader"
+            src="assets/img/resources/logo.png"
+            alt="logo_compañia"
+          />
+          <a href="paciente.html" class="currentPage">Paciente</a>
+        </div>
+        <div class="header-right">
+          <a href="Index.html">Home</a>
+          <a href="Menu.html">Menu</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!--Botones de ingreso y consulta paciente-->
+      <div class="buttonBlock">
+        <button class="fadingButton" type="button">Ingresar</button>
+        <button class="fadingButton" type="button">Consultar</button>
+      </div>
+
+      <!--titulo del bloque donde se aloja el formulario de paciente-->
+      <div class="blockTittle">
+        <p>Ingreso del paciente</p>
+      </div>
+
+      <!--bloque donde se aloja el formulario de paciente-->
+      <div class="infoBlock">
+        <div class="sectionTittle">
+          <p>Información del paciente</p>
+        </div>
+
+        <form id="patientForm" action="" method="post">
+          <div class="itemForm">
+            <label for="nombrePaciente" title="campo obligatorio"
+              >Nombres</label
+            >
+            <input
+              type="text"
+              name="nombrePaciente"
+              id="nombrePaciente"
+              required
+              size="50"
+            />
+          </div>
+
+          <div class="itemForm">
+            <label for="apellidoPaciente" title="campo obligatorio"
+              >Apellidos</label
+            >
+            <input
+              type="text"
+              name="apellidoPaciente"
+              id="apellidoPaciente"
+              required
+              size="50"
+            />
+          </div>
+
+          <div class="itemForm">
+            <label for="cedulaPaciente" title="campo obligatorio"
+              >Número de cédula</label
+            >
+            <input
+              type="number"
+              name="cedulaPaciente"
+              id="cedulaPaciente"
+              required
+              size="50"
+            />
+          </div>
+
+          <div class="itemForm">
+            <label for="telefonoPaciente" title="campo obligatorio"
+              >Teléfono</label
+            >
+            <input
+              type="tel"
+              name="telefonoPaciente"
+              id="telefonoPaciente"
+              required
+              size="50"
+            />
+          </div>
+
+          <div class="itemForm">
+            <label for="emailPaciente" title="campo obligatorio">Email</label>
+            <input
+              type="email"
+              name="emailPaciente"
+              id="emailPaciente"
+              required
+              size="50"
+            />
+          </div>
+
+          <div class="itemForm">
+            <label for="direccionPaciente" title="campo obligatorio"
+              >Dirección</label
+            >
+            <input
+              type="text"
+              name="direccionPaciente"
+              id="direccionPaciente"
+              required
+              size="50"
+            />
+          </div>
+
+          <div class="itemForm">
+            <label for="fechaNacimiento" title="campo obligatorio"
+              >Fecha de Nacimiento</label
+            >
+            <input
+              type="date"
+              name="fechaNacimiento"
+              id="fechaNacimiento"
+              required
+              size="50"
+            />
+          </div>
+        </form>
+      </div>
+
+      <div class="sectionButton">
+        <button class="colorButton" type="submit" value="Ingresar">
+          Enviar
+        </button>
+      </div>
+    </main>
+
+    <button class="colorButton" type="button">Actualizar</button>
+    <button class="colorButton" type="button">Eliminar</button>
+
+    <script src="js/paciente.js"></script>
+  </body>
+</html>
