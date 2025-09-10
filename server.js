@@ -32,14 +32,14 @@ app.use(express.json());
 app.use(cookieParser());
 
 // 3. SECRETO PARA JWT
-const JWT_SECRET = 'este-es-un-secreto-muy-largo-y-dificil-de-adivinar-para-vacunet';
+const JWT_SECRET = '$2b$10$HSoAhNdaOwdAswDcyiDkNu1O4F3lPj69ZUBQo/Idx0phi3emkFLOK'; // Clave secreta para firmar los tokens JWT
 
 // 4. CONFIGURACIÓN DE LA BASE DE DATOS
 const db = mysql.createPool({
-    host: 'localhost',
+    host: 'localhost',    
     user: 'root',
     password: '',
-    database: 'vacunetapp',
+    database: 'vacunetapp',   
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
