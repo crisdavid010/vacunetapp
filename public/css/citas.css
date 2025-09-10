@@ -1,0 +1,282 @@
+/* ============================================= */
+/* CSS PARA LA PÁGINA DE CITAS (citas.css)       */
+/* ============================================= */
+
+/* --- CONTENEDOR PRINCIPAL Y VISTAS --- */
+.citas-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f7f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- BOTONES DE PESTAÑAS (AGENDAR / PROGRAMADAS) --- */
+.buttonBlock {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.fadingButton {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #20b2aa;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #20b2aa;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fadingButton:hover {
+    background-color: #e0f2f1;
+}
+
+.fadingButton.active {
+    background-color: #20b2aa;
+    color: white;
+    border-color: #20b2aa;
+}
+
+/* --- BLOQUES DE TÍTULO Y CONTENIDO --- */
+.blockTittle {
+    background-color: #20b2aa;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px 5px 0 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+}
+.blockTittle p {
+    margin: 0;
+}
+
+.infoBlock {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTittle {
+    background-color: #e0e0e0;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+.sectionTittle p {
+    margin: 0;
+}
+
+/* --- FORMULARIO DE AGENDAMIENTO --- */
+#citaForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 1rem;
+}
+
+.form-row {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.itemForm {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.itemForm.full-width {
+    flex: 0 0 100%;
+}
+
+.itemForm label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.itemForm input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.sectionButton {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.colorButton {
+    padding: 0.8rem 2.5rem;
+    background-color: #20b2aa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.colorButton:hover {
+    background-color: #c71585;
+}
+
+/* --- DROPDOWN DE VACUNAS --- */
+.multiselect-container {
+    position: relative;
+    user-select: none;
+}
+
+.multiselect-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#multiselect-label {
+    color: #555;
+}
+
+.multiselect-checklist {
+    position: absolute;   
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);    
+    padding: 1rem;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* --- VISTA DE CITAS PROGRAMADAS --- */
+#lista-citas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.appointmentCard {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.appointmentInfo {
+    padding: 1rem 1.5rem;
+}
+
+.paciente-nombre {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 0.5rem 0;
+}
+
+.cita-vacuna {
+    color: #555;
+    margin: 0 0 1rem 0;
+    font-style: italic;
+}
+
+.cita-detalle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+.cita-detalle .material-symbols-outlined {
+    font-size: 1.2rem;
+    color: #20b2aa;
+}
+
+.appointmentActions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: auto;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.action-button:hover {
+    opacity: 0.8;
+}
+
+.action-button.complete {
+    background-color: #28a745;
+}
+
+.action-button.cancel {
+    background-color: #dc3545;
+}
+
+
+/* --- MENSAJES DE FORMULARIO Y RESPONSIVIDAD --- */
+.mensaje-form {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+.mensaje-exito { color: green; }
+.mensaje-error { color: red; }
+
+@media (max-width: 768px) {
+    .citas-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .multiselect-checklist,
+    .vaccineBlock {
+        grid-template-columns: 1fr;
+    }
+}

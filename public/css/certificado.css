@@ -1,0 +1,274 @@
+:root {
+        --accent: #1aa39b;
+        --paper: #fff;
+        --muted: #666;
+        --max: 900px;
+      }
+      body {
+        font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+        background: #f3f6f8;
+        display: flex;
+        justify-content: center;
+        padding: 32px;
+        color: #222;
+      }
+      .certificado {
+        background: var(--paper);
+        width: 100%;
+        max-width: var(--max);
+        padding: 28px 36px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        position: relative;
+        box-sizing: border-box;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      /* Marca de agua */
+      .watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-20deg);
+        font-size: 64px;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.05);
+        letter-spacing: 4px;
+        white-space: nowrap;
+        pointer-events: none;
+        user-select: none;
+        text-transform: uppercase;
+      }
+
+      /* Header con logos de vigilancia/habilitación a la derecha */
+      .header {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 18px;
+        align-items: center;
+      }
+      .logo {
+        width: 84px;
+        height: 84px;
+        border-radius: 8px;
+        overflow: hidden; /* sin fondo */
+      }
+      .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .head-text h3 {
+        margin: 0;
+        color: var(--accent);
+        font-size: 20px;
+      }
+      .head-text p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .compliance {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        text-align: right;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .compliance .item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .compliance img {
+        height: 34px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      h1.title {
+        text-align: center;
+        margin: 20px 0 6px;
+        font-size: 26px;
+        color: #1f2d3d;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .subtitle {
+        text-align: center;
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+
+      .details {
+        background: #fafafa;
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .field {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .field .label {
+        width: 160px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .field .value {
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .vaccine-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+      }
+      .vaccine-table th,
+      .vaccine-table td {
+        border: 1px solid #e6e9ec;
+        padding: 8px 10px;
+        font-size: 14px;
+        text-align: left;
+      }
+      .vaccine-table th {
+        background: #f7fbfb;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .footer {
+        margin-top: 28px;
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        align-items: flex-end;
+      }
+      .issuer {
+        flex: 1;
+        font-size: 13px;
+        color: #333;
+        text-align: left; /* a la izquierda como pediste */
+        line-height: 1.4;
+      }
+      .firma {
+        width: 280px;
+        text-align: center;
+      }
+      .firma .linea {
+        border-top: 1px solid #000;
+        margin-top: 60px;
+        margin-bottom: 6px;
+      }
+      .firma span {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      @media (max-width: 820px) {
+        .header {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .compliance {
+          align-items: flex-start;
+          text-align: left;
+        }
+        .footer {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .firma {
+          width: 100%;
+        }
+          .watermark {
+            font-size: 46px;
+          }
+        }
+
+        /* Contenedor para la vista completa */
+.vista-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Contenedor para los botones de acción */
+.acciones-certificado {
+    width: 100%;
+    max-width: 900px; /* Mismo ancho que el certificado */
+    text-align: right; /* Alinea los botones a la derecha */
+}
+
+.btn-principal {
+    padding: 0.75rem 1.5rem;
+    background-color: #1aa39b; /* Un azul estándar */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.btn-principal:hover {
+    background-color: #c71585;
+}
+
+/* --- REGLA PARA LA IMPRESIÓN --- */
+
+@media print {
+    /* 1. Oculta todo por defecto */
+    body * {
+        visibility: hidden;
+    }
+
+    /* 2. Hace visible SOLAMENTE el certificado y todo lo que está adentro */
+    .certificado, .certificado * {
+        visibility: visible;
+    }
+
+    /* 3. Posiciona el certificado para que ocupe toda la página de impresión */
+    .certificado {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+    }
+}
+
+.firma {
+    width: 280px;
+    text-align: center;
+    position: relative; /* Importante para posicionar la imagen */
+    padding-top: 20px; /* Espacio para que la imagen no toque el texto superior */
+}
+
+.firma .imagen-firma {
+    position: absolute;
+    bottom: 10px; /* Ajusta este valor para mover la firma verticalmente */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 400px; /* Ajusta el ancho máximo de la firma */
+    height: auto;
+    z-index: 10; /* Asegura que esté por encima de la línea */
+}
+
+.firma .linea {
+    border-top: 1px solid #000;
+    margin-top: 60px; /* Asegura que la línea esté por debajo de la firma */
+    margin-bottom: 6px;
+    position: relative; /* Para que la línea se mantenga */
+    z-index: 5; /* Asegura que esté por debajo de la firma */
+}

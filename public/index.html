@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Información del proyecto -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Index VACUNET APP" />
+    <title>VACUNET APP</title>
+    <meta name="keywords" content="Vista inicial de VACUNET SAS" />
+    <meta name="author" content="CYBERSENATOR-SENA-ADSO-2897548" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- termina Información del proyecto -->
+
+    <!-- Hoja para reiniciar estilos desde cero -->
+    <link rel="stylesheet" href="css/normalize.css" />
+
+    <!-- Estilos únicos de la vista  -->
+    <link rel="stylesheet" href="css/contentDependent/index.css" />
+
+    <!-- Conexión con estilos generales de proyecto -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Conexión de Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- Consumo de fuentes a través de conexiones externas (Dependen de internet) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <!-- El id del body permite que se sepa que es uno delos html que tienen background-->
+  <body id="background__portada">
+    <!-- Aquí nos saltamos la existencia de un header-->
+     
+    <!-- Es el contenedor donde se inyectará el background cambiante -->
+    <div class="heroImage"></div>
+
+    <!-- Se usa para verticalizar los siguientes contenidos -->
+    <div class="contenedor">
+      <!-- Comienza main donde aparece todo el contendio principal -->
+      <main class="mainCentered">
+        <!-- Crea la cajita grisacea que diferencia el contenido -->
+        <div class="contenido_regular">
+          <!-- Se usa para responsividad -->
+          <div class="regularInstructions">
+            <p class="text__portada">Bienvenido a la APP</p>
+            <img
+              src="assets/img/resources/logo.png"
+              class="logoShowing"
+              alt="Logo de la aplicación VACUNET APP"
+            />
+            <p class="text__portada">Continue sobre:</p>
+            <!-- Título de los estilizados -->
+            <a href="sesionAdmin.html" class="regularLink"
+              >Iniciar Sesión</a
+            >
+            <a href="validar-certificado.html" class="regularLink"
+              >Consulta Certificado</a
+            >
+
+          <!-- <p class="text__portada">↓</p> -->
+            <a href="contacto.html" class="regularLink">Contáctanos</a>
+          </div>
+        </div>
+        <!-- Se cierra contenido principal de vista -->
+
+        <!-- Redes sociales de la empresa-->
+        <div class="social__media">
+          <a
+            href="https://www.instagram.com/centrodevacunasvacunet/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="assets/img/resources/instagram.png"
+              class="logo__red"
+              alt="instagram"
+            />
+          </a>
+
+          <a
+            href="https://www.facebook.com/Vacunet.SAS/?locale=es_LA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="assets/img/resources/facebook.png"
+              class="logo__red"
+              alt="facebook"
+            />
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@centro.de.vacunas"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="assets/img/resources/tik-tok.png"
+              class="logo__red"
+              alt="tik-tok"
+            />
+          </a>
+        </div>
+        <!-- Se cierra botones de redes sociales -->
+      </main>
+      <!-- Se cierra contenido principal -->
+
+      <!-- Fotter especial de la vista -->
+      <footer class="footer__portada">
+        <p>Software de uso exclusivo para la empresa VACUNET SAS</p>
+        <p>&copy;2025 CYBERSENATOR</p>
+        <p>
+          <a
+            href="/inicio/politicaPrivacidad.html"
+            class="privacidad-link"
+          >
+            Conozca la política de Privacidad
+          </a>
+        </p>
+      </footer>
+      <!-- Se cierra Fotter especial de la vista -->
+    </div>
+    <!-- Se cierra verticalización de los contenidos -->
+
+    <!-- Lógica única de la vista (Si es que aplica), se pone defer para que cargue tras el DOM -->
+    <script src="js/scriptHeroImage.js" defer></script>
+
+    <!-- Conexión de iconos de FontAwesome -->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </body>
+</html>

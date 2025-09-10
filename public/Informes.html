@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <script src="js/auth-guard.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informes - VACUNET</title>
+    <meta name="author" content="CYBERSENATOR-SENA-ADSO-2897548" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/paciente.css" /> <link rel="stylesheet" href="css/informes.css" /> <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="header-left">
+                <img class="logoHeader" src="assets/img/resources/logo.png" alt="logo_compañia" />
+                <a href="informes.html" class="currentPage">Informes</a>
+            </div>
+            <div class="header-right">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+    <div class="report-container">
+        <div class="buttonBlock">
+            <button class="fadingButton active" id="btnMensual" type="button">Informe Mensual</button>
+            <button class="fadingButton" id="btnSemestral" type="button">Informe Semestral</button>
+            <button class="fadingButton" id="btnAnual" type="button">Informe Anual</button>
+        </div>
+
+        <div id="vistaMensual">
+            <div class="blockTittle"><p>Generar Informe Mensual</p></div>
+            <div class="infoBlock">
+                <div class="sectionTittle"><p>Seleccione el mes y año</p></div>
+                <form id="formMensual">
+                    <div class="itemForm full-width">
+                        <label for="fechaMensual">Seleccione cualquier día del mes a consultar:</label>
+                        <input type="date" name="fecha" id="fechaMensual" required />
+                    </div>
+                    <div class="sectionButton">
+                        <button class="colorButton" type="submit">Generar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="vistaSemestral" class="hidden">
+            <div class="blockTittle"><p>Generar Informe Semestral</p></div>
+            <div class="infoBlock">
+                 <div class="sectionTittle"><p>Seleccione el año y semestre</p></div>
+                <form id="formSemestral" class="form-row">
+                    <div class="itemForm">
+                        <label for="anioSemestral">Año</label>
+                        <input type="number" id="anioSemestral" name="anio" placeholder="Ej: 2025" required />
+                    </div>
+                    <div class="itemForm">
+                        <label for="semestre">Semestre</label>
+                        <select id="semestre" name="semestre" required>
+                            <option value="1">1er Semestre (Ene-Jun)</option>
+                            <option value="2">2do Semestre (Jul-Dic)</option>
+                        </select>
+                    </div>
+                    <div class="sectionButton full-width">
+                        <button class="colorButton" type="submit">Generar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="vistaAnual" class="hidden">
+            <div class="blockTittle"><p>Generar Informe Anual</p></div>
+            <div class="infoBlock">
+                <div class="sectionTittle"><p>Seleccione el año</p></div>
+                <form id="formAnual">
+                    <div class="itemForm full-width">
+                        <label for="anioAnual">Año</label>
+                        <input type="number" id="anioAnual" name="anio" placeholder="Ej: 2025" required />
+                    </div>
+                    <div class="sectionButton">
+                        <button class="colorButton" type="submit">Generar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div id="reportResult" class="hidden" style="margin-top: 2rem;"></div>
+    </div>
+</main>
+
+    <script src="js/informes.js" defer></script>
+</body>
+</html>

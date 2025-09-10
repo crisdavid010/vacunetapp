@@ -1,0 +1,125 @@
+/* --- ESTILOS GENERALES PARA TODOS LOS MODALES --- */
+
+.modal-overlay {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Propiedades para la animación */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Clase que se añade con JS para mostrar el modal */
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 25px 35px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+    /* Animación del contenido */
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.modal-content p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close-button:hover {
+    color: #333;
+}
+
+/* --- MODAL DE ALERTA (UN SOLO BOTÓN) --- */
+#modal-icon {
+    margin-bottom: 15px;
+}
+
+#modal-icon .material-symbols-outlined {
+    font-size: 50px;
+}
+#modal-icon.success .material-symbols-outlined {
+    color: #28a745;
+}
+#modal-icon.error .material-symbols-outlined {
+    color: #dc3545;
+}
+
+#modal-button {
+    background-color: #20b2aa;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+#modal-button:hover {
+    background-color: #1a8f8a;
+}
+
+/* --- MODAL DE CONFIRMACIÓN (SÍ/NO) --- */
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 25px;
+}
+
+.modal-button.secondary {
+    background-color: #dc3545;
+}
+.modal-button.secondary:hover {
+    background-color: #dc3545;
+}
+
+.modal-button.confirm-complete {
+    background-color: #28a745;
+}
+.modal-button.confirm-cancel {
+    background-color: #28a745;
+}
+img.modal-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}

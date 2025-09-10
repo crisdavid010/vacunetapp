@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Pacientes</title>
+    <meta name="author" content="CYBERSENATOR-SENA-ADSO-2897548" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" /> 
+    <link rel="stylesheet" href="css/paciente.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <div id="alertaModal" class="modal-overlay">
+        <div class="modal-content">
+            <span id="alertaClose" class="close-button">&times;</span>
+            <div id="alerta-icon"></div>
+            <h2 id="alerta-title"></h2>
+            <p id="alerta-message"></p>
+            <button id="alerta-button" class="modal-button">Aceptar</button>
+        </div>
+    </div>
+    <div id="confirmacionAccionModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 id="confirm-modal-title">Confirmar Acción</h2>
+            <p id="confirm-modal-text">¿Estás seguro?</p>
+            <div class="modal-buttons">
+                <button id="confirm-btn-no" class="modal-button secondary">No, volver</button>
+                <button id="confirm-btn-yes" class="modal-button">Sí, confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header">
+            <div class="header-left">
+                <img class="logoHeader" src="assets/img/resources/logo.png" alt="logo_compañia" />
+                <a href="paciente.html" class="currentPage">Paciente</a>
+            </div>
+            <div class="header-right">
+                <a href="Index.html">Home</a>
+                <a href="Menu.html">Menu</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="patient-container">
+            <div class="buttonBlock">
+                <button class="fadingButton active" id="btnIngresar" type="button">Ingresar</button>
+                <button class="fadingButton" id="btnConsultar" type="button">Consultar</button>
+            </div>
+
+            <div id="vistaIngresar">
+                <div class="blockTittle">
+                    <p>Ingreso del paciente</p>
+                </div>
+                <div class="infoBlock">
+                    <div class="sectionTittle">
+                        <p>Información del paciente</p>
+                    </div>
+                    <form id="patientForm">
+                        <div class="form-row">
+                            <div class="itemForm">
+                                <label for="nombrePaciente">Nombres</label>
+                                <input type="text" id="nombrePaciente" name="nombre" required />
+                            </div>
+                            <div class="itemForm">
+                                <label for="apellidoPaciente">Apellidos</label>
+                                <input type="text" id="apellidoPaciente" name="apellido" required />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="itemForm">
+                                <label for="cedulaPaciente">Número de cédula</label>
+                                <input type="number" id="cedulaPaciente" name="cedula" required />
+                            </div>
+                            <div class="itemForm">
+                                <label for="telefonoPaciente">Teléfono</label>
+                                <input type="tel" id="telefonoPaciente" name="telefono" required />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="itemForm">
+                                <label for="emailPaciente">Email</label>
+                                <input type="email" id="emailPaciente" name="email" required />
+                            </div>
+                            <div class="itemForm">
+                                <label for="direccionPaciente">Dirección</label>
+                                <input type="text" id="direccionPaciente" name="direccion" required />
+                            </div>
+                        </div>
+                        <div class="itemForm full-width">
+                            <label for="fechaNacimientoPaciente">Fecha de Nacimiento</label>
+                            <input type="date" id="fechaNacimientoPaciente" name="fecha_nacimiento" required />
+                        </div>
+                        <div class="sectionButton">
+                            <button class="colorButton" type="submit">Enviar</button>
+                        </div>
+                    </form>
+                    <p id="mensaje-paciente" class="mensaje-form"></p>
+                </div>
+            </div>
+
+            <div id="vistaConsultar" class="hidden">
+                <div class="blockTittle">
+                    <p>Consulta de Pacientes</p>
+                </div>
+                <div class="infoBlock">
+                    <div class="sectionTittle">
+                        <p>Buscar Paciente por Cédula</p>
+                    </div>
+                    <form id="searchPatientForm">
+                        <div class="itemForm full-width">
+                            <label for="searchCedula">Cédula del Paciente</label>
+                            <input type="number" id="searchCedula" name="cedula" placeholder="Ingrese la cédula del paciente" required />
+                        </div>
+                        <div class="sectionButton">
+                            <button class="colorButton" type="submit">Buscar</button>
+                        </div>
+                    </form>
+                    <p id="mensaje-busqueda" class="mensaje-form"></p>
+                    
+                    <div id="patientResult" class="patient-card hidden">
+                        <h4>Datos del Paciente</h4>
+                        <p><strong>Nombres:</strong> <span id="resultNombre"></span> <span id="resultApellido"></span></p>
+                        <p><strong>Cédula:</strong> <span id="resultCedula"></span></p>
+                        <p><strong>Teléfono:</strong> <span id="resultTelefono"></span></p>
+                        <p><strong>Email:</strong> <span id="resultEmail"></span></p>
+                        <p><strong>Dirección:</strong> <span id="resultDireccion"></span></p>
+                        <p><strong>Fecha Nacimiento:</strong> <span id="resultFechaNacimiento"></span></p>
+                        
+                        <div class="sectionButton">
+                        <button class="colorButton" type="button" id="btnActualizar">Actualizar</button>
+                        <button class="colorButton-eliminar" type="button" id="btnEliminar">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/paciente.js" defer></script>
+</body>
+</html>

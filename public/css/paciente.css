@@ -1,0 +1,224 @@
+/* css/paciente.css */
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.patient-container {
+    max-width: 950px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --- BOTONES DE PESTAÑAS (INGRESAR / CONSULTAR) --- */
+.buttonBlock {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.fadingButton {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #20b2aa;
+    border-radius: 5px;
+    background-color: white;
+    color: #20b2aa;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fadingButton:hover {
+    background-color: #e0f2f1;
+    transform: translateY(-2px);
+}
+
+.fadingButton.active {
+    background-color: #20b2aa;
+    color: white;
+}
+
+/* --- BLOQUES DE TÍTULO Y CONTENIDO --- */
+.blockTittle {
+    background-color: #20b2aa;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px 8px 0 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+.blockTittle p {
+    margin: 0;
+}
+
+.infoBlock {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTittle {
+    background-color: #f0f0f0;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    border-left: 5px solid #20b2aa;
+}
+.sectionTittle p {
+    margin: 0;
+}
+
+/* --- FORMULARIOS --- */
+#patientForm,
+#searchPatientForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+.itemForm {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.itemForm.full-width {
+    flex-basis: 100%;
+}
+
+.itemForm label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.itemForm input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.itemForm input:focus {
+    outline: none;
+    border-color: #20b2aa;
+    box-shadow: 0 0 0 3px rgba(32, 178, 170, 0.2);
+}
+
+/* --- BOTONES DE ACCIÓN --- */
+.sectionButton {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.colorButton {
+    padding: 0.8rem 2.5rem;
+    background-color: #20b2aa;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.colorButton:hover {
+    background-color: #c71585;
+    transform: scale(1.05);
+}
+
+.colorButton-eliminar {
+    padding: 0.8rem 2.5rem;
+    background-color: #dc3545; /* Rojo */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.colorButton-eliminar:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* --- TARJETA DE RESULTADOS DE BÚSQUEDA --- */
+.patient-card {
+    background-color: #f0f8ff;
+    border: 1px solid #b0e0e6;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.patient-card h4 {
+    color: #20b2aa;
+    margin-top: 0;
+    border-bottom: 2px solid #20b2aa;
+    padding-bottom: 0.5rem;
+}
+
+.patient-card p {
+    margin: 0.8rem 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+.patient-card strong {
+    color: #000;
+}
+
+/* --- MENSAJES Y UTILIDADES --- */
+.mensaje-form {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.mensaje-exito {
+    color: #28a745;
+}
+.mensaje-error {
+    color: #dc3545;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 768px) {
+    .patient-container {
+        padding: 1rem;
+        margin: 1rem;
+        width: auto;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .itemForm {
+        min-width: 100%;
+    }
+}

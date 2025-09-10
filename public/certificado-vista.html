@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Certificado de Vacunación - VACUNET</title>
+    <link rel="stylesheet" href="css/certificado.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div class="vista-container">
+        
+        <div class="certificado" id="certificado-div" role="region" aria-label="Certificado de vacunación">
+            <div class="watermark">CERTIFICADO OFICIAL</div>
+
+            <div class="header">
+                <div class="logo">
+                    <img src="assets/img/resources/logo.png" alt="Logo VACUNET" />
+                </div>
+                <div class="head-text">
+                    <h3 id="issuerName">Centro de Vacunación VACUNET S.A.S.</h3>
+                    <p id="issuerAddr">Calle 31 #N° 58-38, Cartagena de Indias, Bolívar</p>
+                </div>
+                <div class="compliance" aria-label="Entes de vigilancia y habilitación">
+                    <div class="item">
+                        
+                        <img src="assets/img/resources/supersalud.png" alt="Logo Supersalud" />
+                    </div>
+                    <div class="item">
+                        
+                        <img src="assets/img/resources/secretaria.png" alt="Logo Secretaría de Salud" />
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="title">Centro de Vacunas - VACUNET</h1>
+            <div class="subtitle">
+                Documento que certifica la aplicación de vacunas según registros oficiales
+            </div>
+
+            <div class="details">
+                <div class="field">
+                    <div class="label">Nombre completo</div>
+                    <div class="value" id="fullName">--</div>
+                </div>
+                <div class="field">
+                    <div class="label">Documento</div>
+                    <div class="value" id="documentNumber">--</div>
+                </div>
+
+                <h4 style="margin: 14px 0 8px">Registro de vacunación</h4>
+                <table class="vaccine-table" aria-describedby="Registro de dosis">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Vacuna</th>
+                            <th>Fabricante</th>
+                            <th>Lote</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vaccineRows">
+                        <tr>
+                            <td colspan="4" style="text-align: center; color: #999">Cargando datos...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="footer">
+                <div class="issuer">
+                    <div><strong>Emitido por:</strong> VACUNET S.A.S.</div>
+                    <div><strong>Fecha de emisión:</strong> <span id="issuedDate">--</span></div>
+                </div>
+                <div class="firma">
+                    
+                    <img src="assets/img/resources/firma.png" alt="Firma del Gerente" class="imagen-firma">
+                    <div class="linea"></div> <span>Firma del Gerente de VACUNET S.A.S.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="acciones-certificado">
+            <button id="btnPrint" class="btn-principal">Imprimir / Guardar PDF</button>
+            <button id="btnDownloadImage" class="btn-principal">Descargar como Imagen</button>
+        </div>
+
+    </div>
+
+    <script src="js/certificado-vista.js" defer></script>
+</body>
+</html>

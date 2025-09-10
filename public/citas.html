@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <script src="js/auth-guard.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Citas</title>
+    <meta name="author" content="CYBERSENATOR-SENA-ADSO-2897548" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/citas.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <div id="alertaModal" class="modal-overlay">
+        <div class="modal-content">
+            <span id="alertaClose" class="close-button">&times;</span>
+            <div id="alerta-icon"></div>
+            <h2 id="alerta-title"></h2>
+            <p id="alerta-message"></p>
+            <button id="alerta-button" class="modal-button">Aceptar</button>
+        </div>
+    </div>
+    
+    <div id="confirmacionAccionModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 id="confirm-modal-title">Confirmar Acción</h2>
+            <p id="confirm-modal-text">¿Estás seguro?</p>
+            <div class="modal-buttons">
+                <button id="confirm-btn-no" class="modal-button secondary">No, volver</button>
+                <button id="confirm-btn-yes" class="modal-button">Sí, confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header">
+            <div class="header-left">
+                <img class="logoHeader" src="assets/img/resources/logo.png" alt="logo_compañia" />
+                <a href="citas.html" class="currentPage">Citas</a>
+            </div>
+            <div class="header-right">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="citas-container">
+            <div class="buttonBlock">
+                <button class="fadingButton active" id="btnAgendar" type="button">Agendar</button>
+                <button class="fadingButton" id="btnProgramadas" type="button">Programadas</button>
+            </div>
+
+            <div id="vistaAgendar">
+                <div class="blockTittle"><p>Agendamiento de Cita</p></div>
+                <div class="infoBlock">
+                    <div class="sectionTittle"><p>Información de la Cita</p></div>
+                    <form id="citaForm">
+                        <div class="itemForm full-width">
+                            <label for="cedulaCita">Cédula del Paciente</label>
+                            <input type="number" name="cedula" id="cedulaCita" required placeholder="Cédula del paciente a agendar" />
+                        </div>
+                        <div class="form-row">
+                            <div class="itemForm">
+                                <label for="fechaCita">Fecha de la Cita</label>
+                                <input type="date" name="fecha" id="fechaCita" required />
+                            </div>
+                            <div class="itemForm">
+                                <label for="horaCita">Hora de Atención</label>
+                                <input type="time" name="hora" id="horaCita" required />
+                            </div>
+                        </div>
+                        <div class="itemForm full-width">
+                            <label>Vacunas a Aplicar</label>
+                            <div class="multiselect-container">
+                                <div id="multiselect-button" class="multiselect-button">
+                                    <span id="multiselect-label">Seleccionar vacunas...</span>
+                                    <span class="material-symbols-outlined">arrow_drop_down</span>
+                                </div>
+                                <div id="vacunas-checklist" class="multiselect-checklist hidden"></div>
+                            </div>
+                        </div>
+                        <div class="sectionButton">
+                            <button class="colorButton" type="submit">Agendar Cita</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="vistaProgramadas" class="hidden">
+                <div class="blockTittle"><p>Citas Programadas</p></div>
+                <div id="lista-citas" class="infoBlock">
+                    <p>Cargando citas...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/main.js" defer></script> 
+    <script src="js/citas.js" defer></script>
+</body>
+</html>

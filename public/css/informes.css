@@ -1,0 +1,50 @@
+/* css/informes.css */
+.report-container { /* Renombra .patient-container a este si es necesario */
+    max-width: 950px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#reportResult {
+    margin-top: 2rem;
+}
+
+#reportResult h4 {
+    text-align: center;
+    color: #20b2aa;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+.report-table th, 
+.report-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.report-table thead th {
+    background-color: #20b2aa;
+    color: white;
+    font-weight: bold;
+}
+
+.report-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.report-table tfoot th,
+.report-table tfoot td {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}

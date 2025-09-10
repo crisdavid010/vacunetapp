@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/auth-guard.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Certificados</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/paciente.css" /> <link rel="stylesheet" href="css/modal.css" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <div id="alertaModal" class="modal-overlay">
+        <div class="modal-content">
+            <span id="alertaClose" class="close-button">&times;</span>
+            <div id="alerta-icon"></div>
+            <h2 id="alerta-title"></h2>
+            <p id="alerta-message"></p>
+            <button id="alerta-button" class="modal-button">Aceptar</button>
+        </div>
+    </div>   
+    <header>
+        <div class="header">
+            <div class="header-left">
+                <img class="logoHeader" src="assets/img/resources/logo.png" alt="logo_compañia" />
+                <a href="certificados.html" class="currentPage">Certificados</a>
+            </div>
+            <div class="header-right">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="patient-container">
+            <div class="blockTittle"><p>Creación de Certificados</p></div>
+            <div class="infoBlock">
+                <div class="sectionTittle"><p>Selección del paciente</p></div>
+                <form id="searchCertificadoForm">
+                    <div class="itemForm full-width">
+                        <label for="searchCedula">Número de cédula</label>
+                        <input type="number" id="searchCedula" name="cedula" placeholder="Cédula del paciente" required />
+                    </div>
+                    <div class="sectionButton">
+                        <button class="colorButton" type="submit">Generar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="js/main.js" defer></script>
+    <script src="js/certificados.js" defer></script>
+</body>
+</html>

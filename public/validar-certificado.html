@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Validador de certificados VACUNET APP" />
+    <title>Validación VACUNET</title>
+    <meta name="author" content="CYBERSENATOR-SENA-ADSO-2897548" />
+    
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/validacion.css" /> <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="js/scriptHeroImage.js" defer></script>
+</head>
+<body id="background__portada">
+    <div id="alertaModal" class="modal-overlay">
+        <div class="modal-content">
+            <span id="alertaClose" class="close-button">&times;</span>
+            <div id="alerta-icon"></div>
+            <h2 id="alerta-title"></h2>
+            <p id="alerta-message"></p>
+            <button id="alerta-button" class="modal-button">Aceptar</button>
+        </div>
+    </div>
+
+    <div class="heroImage"></div>
+
+    <div class="contenedor">
+        <main class="mainCentered">
+            <div class="contenido_regular">
+                <a href="index.html" class="back-link">
+                    <span class="material-symbols-outlined">arrow_back</span> Regresar
+                </a>
+
+                <img src="assets/img/resources/logo.png" alt="Logo Vacunet" class="logoShowing" />
+                <p class="form-title">Verifica un certificado</p>
+
+                <div class="regularInstructions">
+                    <form id="validarCertificadoForm">
+                        <input type="number" id="cedulaUsuario" name="cedula" placeholder="Número de cédula" required />
+                        
+                        <p id="errorMessage" class="error-text" style="display: none;">Identificador no válido.</p>
+                        
+                        <button type="submit" class="submit-button">Validar certificado</button>
+                    </form>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vacunetgerencia@gmail.com&su=Solicitud%20certificado" target="_blank" rel="noopener" class="help-link">
+                        ¿No puedes ver tu certificado?
+                    </a>
+                </div>
+            </div>
+        </main>
+        <footer class="footer__portada">
+            <p>Software de uso exclusivo para la empresa VACUNET SAS</p>
+            <p>&copy;2025 CYBERSENATOR</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/validar-certificado.js" defer></script>
+</body>
+</html>
