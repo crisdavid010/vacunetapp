@@ -2,7 +2,6 @@
 // SERVIDOR PRINCIPAL DE LA API PARA VACUNET (VERSIÓN FINAL)
 // =============================================================
 
-console.log("--- INICIANDO SERVIDOR VACUNET 1.0 ---");
 
 // 1. IMPORTACIÓN DE MÓDULOS
 const express = require('express');
@@ -12,8 +11,9 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const app = express();
+const chalk = require('chalk'); // Para colores en la consola
 
-
+console.log(chalk.cyan.bold("🚀 --- INICIANDO SERVIDOR VACUNET 1.0 --- 🚀"));
 
 // 2. CONFIGURACIÓN INICIAL DE EXPRESS
 app.use(express.static('public'));
@@ -45,6 +45,17 @@ const db = mysql.createPool({
     queueLimit: 0,
     multipleStatements: true,
 });
+
+// 4. Verificamos la conexión a la base de datos al inicio
+db.getConnection()
+    .then(connection => {
+        console.log(chalk.green('✅ Conectado exitosamente a la base de datos MySQL.'));
+        connection.release();
+    })
+    .catch(err => {
+        console.error(chalk.red.bold('❌ Error al conectar a la base de datos:'), err);
+    });
+
 
 // ===============================================
 // MIDDLEWARE DE SEGURIDAD
@@ -96,6 +107,7 @@ app.post('/api/login', async (req, res) => {
         }
     } catch (error) {
         console.error("Error en login:", error);
+        console.error(chalk.red.bold("🔥 Error en /api/login:"), error);
         res.status(500).json({ success: false, message: 'Error en el servidor.' });
     }
 });
@@ -167,6 +179,7 @@ app.get('/api/auth/status', protegerRutaAdmin, (req, res) => {
 
 // --- RUTAS DE PACIENTES (PROTEGIDAS) ---
 app.post('/api/pacientes', protegerRutaAdmin, async (req, res) => {
+    console.log(chalk.blue('➡️  Recibida petición para CREAR PACIENTE'));
     try {
         const { nombre, apellido, cedula, telefono, email, direccion, fecha_nacimiento } = req.body;
         if (!nombre || !apellido || !cedula) return res.status(400).json({ success: false, message: 'Nombre, apellido y cédula son requeridos.' });
@@ -234,6 +247,7 @@ app.get('/api/lotes', protegerRutaAdmin, async (req, res) => {
         const totalPages = Math.ceil(results[0][0].total / limit);
         res.json({ data: results[1], pagination: { currentPage: page, totalPages: totalPages } });
     } catch (err) {
+        console.error(chalk.red.bold("🔥 Error al obtener inventario:"), err);
         res.status(500).json({ success: false, message: "Error en el servidor." });
     }
 });
@@ -455,8 +469,10 @@ app.post('/api/informes/anual', protegerRutaAdmin, async (req, res) => {
 });
 
 
-// 6. INICIAR EL SERVIDOR
+// ===============================================
+// INICIAR EL SERVIDOR
+// ===============================================
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Servidor API corriendo en http://localhost:${PORT}`);
+    console.log(chalk.green.bold(`\n🎉 Servidor API corriendo exitosamente en http://localhost:${PORT}`));
 });
