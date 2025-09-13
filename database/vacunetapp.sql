@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-09-2025 a las 20:40:30
+-- Tiempo de generación: 13-09-2025 a las 07:16:33
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -40,7 +40,7 @@ CREATE TABLE `administradores` (
 --
 
 INSERT INTO `administradores` (`id_admin`, `nombre`, `cedula`, `password_hash`, `rol`) VALUES
-(1, 'Administrador Principal', '123456789', '$2b$10$02Q42EzxxlakURLGonbNvOYb3mj5mZ9aGEecTH.RE0v4NockhO7Rq', 'admin');
+(1, 'Administrador Principal', '123456789', '$2b$10$H1nMfwIvmGRySk6V337BUuhUwBvboZ0C9zzzaOYrAciMIhQp6y57O', 'admin');
 
 -- --------------------------------------------------------
 
@@ -53,6 +53,13 @@ CREATE TABLE `certificado` (
   `id_cita_origen` int(11) NOT NULL,
   `fecha_envio` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `certificado`
+--
+
+INSERT INTO `certificado` (`id_certificado`, `id_cita_origen`, `fecha_envio`) VALUES
+(1, 5, '2025-09-11 20:54:02');
 
 -- --------------------------------------------------------
 
@@ -78,7 +85,8 @@ INSERT INTO `cita` (`id_cita`, `paciente`, `fecha_hora`, `id_vacuna_tipo`, `id_l
 (1, 4, '2025-09-05 09:00:00', 9, 1, 1, 'completada'),
 (2, 3, '2025-08-10 10:00:00', 16, 4, 1, 'completada'),
 (3, 1, '2025-10-15 11:00:00', 14, NULL, 1, 'pendiente'),
-(4, 2, '2025-10-16 14:30:00', 6, NULL, 1, 'pendiente');
+(4, 2, '2025-10-16 14:30:00', 6, NULL, 1, 'pendiente'),
+(5, 4, '2025-09-12 10:00:00', 2, NULL, 1, 'completada');
 
 -- --------------------------------------------------------
 
@@ -96,6 +104,13 @@ CREATE TABLE `citas_canceladas` (
   `fecha_cancelacion` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `citas_canceladas`
+--
+
+INSERT INTO `citas_canceladas` (`id_cancelacion`, `id_cita_original`, `paciente`, `fecha_hora`, `id_vacuna_tipo`, `numero_dosis_aplicada`, `fecha_cancelacion`) VALUES
+(1, 6, 3, '2025-09-12 10:00:00', 7, 1, '2025-09-12 01:54:09');
+
 -- --------------------------------------------------------
 
 --
@@ -111,6 +126,13 @@ CREATE TABLE `citas_perdidas` (
   `numero_dosis_aplicada` int(11) NOT NULL,
   `fecha_archivado` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `citas_perdidas`
+--
+
+INSERT INTO `citas_perdidas` (`id_perdida`, `id_cita_original`, `paciente`, `fecha_hora`, `id_vacuna_tipo`, `numero_dosis_aplicada`, `fecha_archivado`) VALUES
+(1, 7, 3, '2025-09-12 10:00:00', 2, 1, '2025-09-13 02:52:42');
 
 -- --------------------------------------------------------
 
@@ -150,8 +172,9 @@ INSERT INTO `lotes_inventario` (`id_lote_inventario`, `id_vacuna_tipo`, `numero_
 (3, 15, 'MD-X01', 120, '2026-07-20', '2025-09-10 18:17:26'),
 (4, 16, 'JN-Y05', 200, '2026-12-01', '2025-09-10 18:17:26'),
 (5, 17, 'SV-Z09', 50, '2025-11-30', '2025-09-10 18:17:26'),
-(6, 14, 'PZ-003C-EXP', 10, '2025-09-20', '2025-09-10 18:17:26'),
-(7, 9, '158526FF', 30, '2026-09-10', '2025-09-10 13:38:44');
+(6, 14, 'PZ-003C-EXP', 120, '2026-09-20', '2025-09-10 18:17:26'),
+(7, 9, '158526FF', 30, '2026-09-10', '2025-09-10 13:38:44'),
+(8, 1, 'lote55', 100, '2026-09-10', '2025-09-11 20:59:20');
 
 -- --------------------------------------------------------
 
@@ -178,7 +201,8 @@ INSERT INTO `paciente` (`id_paciente`, `nombre`, `apellido`, `telefono`, `cedula
 (1, 'Carlos', 'González', '3011234567', '1065123456', 'carlos.gonzalez@example.com', '1985-04-12', 'Bocagrande, Av. San Martín #5-25'),
 (2, 'Ana María', 'Rodríguez', '3157654321', '1066789012', 'ana.rodriguez@example.com', '1992-08-22', 'Manga, Calle 25 #18-40'),
 (3, 'Javier', 'Martínez', '3009876543', '73140980', 'javier.martinez@example.com', '1978-11-02', 'El Pozón, Sector La Paz Mz A Lote 10'),
-(4, 'Cristian David', 'Alvarez Quiroz', '3205551234', '1143400158', 'cristian.alvarez@example.com', '1997-05-05', 'Crespo, Carrera 10 #70-112');
+(4, 'Cristian David', 'Alvarez Quiroz', '3205551234', '1143400158', 'cristian.alvarez@example.com', '1997-05-05', 'Crespo, Carrera 10 #70-112'),
+(5, 'sofis andrea', 'ballestas castro', '311456532', '1143404289', 'sofis@gmail.com', '2001-05-15', 'Barrio las americas');
 
 -- --------------------------------------------------------
 
@@ -298,25 +322,25 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT de la tabla `certificado`
 --
 ALTER TABLE `certificado`
-  MODIFY `id_certificado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_certificado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `cita`
 --
 ALTER TABLE `cita`
-  MODIFY `id_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `citas_canceladas`
 --
 ALTER TABLE `citas_canceladas`
-  MODIFY `id_cancelacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cancelacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `citas_perdidas`
 --
 ALTER TABLE `citas_perdidas`
-  MODIFY `id_perdida` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_perdida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `informe`
@@ -328,13 +352,13 @@ ALTER TABLE `informe`
 -- AUTO_INCREMENT de la tabla `lotes_inventario`
 --
 ALTER TABLE `lotes_inventario`
-  MODIFY `id_lote_inventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_lote_inventario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `vacunas`

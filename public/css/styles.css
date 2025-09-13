@@ -654,3 +654,41 @@ a {
     text-align: center;
     margin-top: 15px;
 }
+/* =============================
+   Política de Privacidad
+============================== */
+.politica-privacidad {
+  background: #f7f9f9;
+  max-width: 900px;
+  margin: 2em auto;
+  padding: 2em 2.5em;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  color: #333;
+  font-family: "Inter", Arial, sans-serif;
+}
+.politica-privacidad h1 {
+  color: #0073e6;
+  font-size: 2.2em;
+  margin-bottom: 0.7em;
+  text-align: center;
+}
+.politica-privacidad h2 {
+  color: #c71585;
+  font-size: 1.3em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.politica-privacidad section {
+  margin-bottom: 1.5em;
+}
+.politica-privacidad p {
+  line-height: 1.7;
+  margin-bottom: 0.7em;
+}
+.politica-privacidad footer {
+  text-align: center;
+  color: #888;
+  font-size: 0.95em;
+  margin-top: 2em;
+}

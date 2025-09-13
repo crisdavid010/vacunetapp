@@ -108,7 +108,7 @@
 
 /* Estilos para resaltar lotes con condiciones especiales */
 .lote-por-vencer {
-    background-color: #fff3cd !important; /* Amarillo advertencia */
+    background-color: #c71585 !important; /* Rosa advertencia */
 }
 .lote-pocas-dosis {
     color: #dc3545; /* Rojo peligro */
@@ -185,16 +185,16 @@
     padding: 6px 12px;
     font-size: 0.9rem;
     font-weight: bold;
-    color: #007bff;
+    color: #20b2aa;
     background-color: transparent;
-    border: 1px solid #007bff;
+    border: 1px solid #20b2aa;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .action-btn-edit:hover {
-    background-color: #007bff;
+    background-color: #20b2aa;
     color: white;
 }
 

@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - DB_HOST=db
+      - DB_USER=root 
+      - DB_PASSWORD=admin123
+      - DB_DATABASE=vacunetapp
+      - DB_PORT=3306
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      # AQUÍ ESTÁ LA CORRECCIÓN: Le damos una contraseña al root de MySQL
+      MYSQL_ROOT_PASSWORD: admin123 
+      MYSQL_DATABASE: vacunetapp
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./database/vacunetapp.sql:/docker-entrypoint-initdb.d/init.sql
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db_data:

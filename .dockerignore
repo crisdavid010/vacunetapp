@@ -1,0 +1,8 @@
+# ignoramos archivos y carpetas que no son necesarios en la imagen Docker
+# sirve para reducir el tamaño de la imagen y mejorar la seguridad
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+.git
+.gitignore

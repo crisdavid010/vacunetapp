@@ -131,7 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function cargarTiposDeVacuna() {
         try {
-            const response = await fetch('http://localhost:3000/api/vacunas');
+            const response = await fetch('http://localhost:3000/api/vacunas', {
+                credentials: 'include'
+            });
             const vacunas = await response.json();
             vacunaSelect.innerHTML = '<option value="">-- Seleccione un tipo de vacuna --</option>';
             vacunas.forEach(vacuna => {
@@ -164,6 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modo === 'editar') {
             url = `http://localhost:3000/api/lotes/${id}`;
             method = 'PUT';
+            credentials: 'include'
         }
 
         try {
@@ -194,7 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
             await vacunasCargadasPromise; // Asegura que las vacunas estén cargadas
             const id = event.target.dataset.id;
             try {
-                const response = await fetch(`http://localhost:3000/api/lotes/${id}`);
+                const response = await fetch(`http://localhost:3000/api/lotes/${id}`, {
+                    credentials: 'include'
+                });
                 const result = await response.json();
                 if(result.success) {
                     prepararFormularioParaEditar(result.lote);

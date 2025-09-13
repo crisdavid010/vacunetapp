@@ -3,7 +3,7 @@
 // =============================================================
 
 
-// 1. IMPORTACIÓN DE MÓDULOS
+//  IMPORTACIÓN DE MÓDULOS
 const express = require('express');
 const mysql = require('mysql2/promise');
 const cors = require('cors');
@@ -15,9 +15,9 @@ const chalk = require('chalk'); // Para colores en la consola
 
 console.log(chalk.cyan.bold("🚀 --- INICIANDO SERVIDOR VACUNET 1.0 --- 🚀"));
 
-// 2. CONFIGURACIÓN INICIAL DE EXPRESS
+// CONFIGURACIÓN INICIAL DE EXPRESS
 app.use(express.static('public'));
-const allowedOrigins = ['http://localhost', 'http://127.0.0.1:5500', 'http://localhost:5500'];
+const allowedOrigins = ['http://localhost', 'http://127.0.0.1:5500', 'http://localhost:5500', 'http://localhost:3000'];
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.indexOf(origin) !== -1) {
@@ -32,14 +32,28 @@ app.use(express.json());
 app.use(cookieParser());
 
 // 3. SECRETO PARA JWT
-const JWT_SECRET = '$2b$10$HSoAhNdaOwdAswDcyiDkNu1O4F3lPj69ZUBQo/Idx0phi3emkFLOK'; // Clave secreta para firmar los tokens JWT
+const JWT_SECRET = 'fc2106373a880f0b0eb0755e017b7bee'; // Clave secreta para firmar los tokens JWT
 
-// 4. CONFIGURACIÓN DE LA BASE DE DATOS
+//  CONFIGURACIÓN DE LA BASE DE DATOS
+//const db = mysql.createPool({
+  //  host: 'localhost',    
+  //  user: 'root',
+  //  password: '',
+  //  database: 'vacunetapp',   
+  //  waitForConnections: true,
+  //  connectionLimit: 10,
+  //  queueLimit: 0,
+  //  multipleStatements: true,
+//});
+
+// Configuración de la base de datos usando variables de entorno si están definidas (Docker) 
+// segmento debe ser comentado si se usa XAMPP
 const db = mysql.createPool({
-    host: 'localhost',    
-    user: 'root',
-    password: '',
-    database: 'vacunetapp',   
+    host: process.env.DB_HOST || 'db', // 'db' es el nombre del servicio en docker-compose
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || 'admin123',
+    database: process.env.DB_DATABASE || 'vacunetapp',
+    port: process.env.DB_PORT || 3306,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
